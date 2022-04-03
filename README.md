@@ -1,6 +1,8 @@
 # Language-Driven Artistic Style Transfer
 A PyTorch implementation of LDAST
 
+<img src='_imgs/ldast.png' width='75%' />
+
 ## Overview
 aaa
 
