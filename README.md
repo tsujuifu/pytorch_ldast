@@ -23,7 +23,7 @@ The [dataset](https://drive.google.com/drive/folders/1fznNVe7gChMBfFRK3Z9I_pkVC3
 Please visit [WikiArt](https://www.wikiart.org/) and [here](https://docs.google.com/forms/d/e/1FAIpQLScmq5Ob4v2VNLHqPpo7CAh81v_uRW_Kkwqmd0NTcS6nu1vMYg/viewform) for emotional effect instructions ([ArtEmis](https://www.artemisdataset.org)).
 
 ### Inference
-Put [clva_dtd.pt](https://drive.google.com/uc?id=1HzGlTd9-BSmpWEiqSXGVNPOZ2vcR8qps) in [./\_ckpt](https://github.com/tsujuifu/pytorch_ldast/tree/main/_snapshot).
+Put [clva_dtd.pt](https://drive.google.com/uc?id=1HzGlTd9-BSmpWEiqSXGVNPOZ2vcR8qps) in [./\_ckpt](https://github.com/tsujuifu/pytorch_ldast/tree/main/_ckpt).
 ```
 python inference.py
 ```
