@@ -13,7 +13,9 @@ LDAST is an implementation of <br>
 Language visual artist (LVA) extracts **content structures from <I>C</I>** and **visual patterns from <I>X</I>** to perform LDAST. LVA adopts the **patch-wise style discriminator <I>D</I>** to connect extracted visual semantics to **patches of paired style image (<I>P<sub>S</sub></I>)**. Contrastive reasoning (CR) allows comparing **contrastive pairs <I>C<sub>1</sub>-X<sub>1</sub></I>, <I>C<sub>2</sub>-X<sub>1</sub></I>, and <I>C<sub>2</sub>-X<sub>2</sub></I>** of content image and style instruction. 
 
 ## Requirements
-aaa
+This code is implemented under **Python 3.8**, [PyTorch 1.7](https://pypi.org/project/torch/1.7.0), and [Torchvision 0.8](https://pypi.org/project/torchvision/0.8.0). <br>
++ [tqdm](https://pypi.org/project/tqdm)
++ [CLIP](https://github.com/openai/clip)
 
 ## Usage
 aaa
