@@ -63,7 +63,7 @@ class GUI(PyQt5.QtWidgets.QMainWindow):
 
             o = (o[0].permute(1, 2, 0).data.cpu().numpy().clip(0.0, 1.0)*255.0).astype(np.uint8)
             o = Image.fromarray(o).convert('RGB')
-            o.save('out.jpg', quality=100)
+            o.save('out.jpg', quality=100, subsampling=0)
             self.img_out.setPixmap(PyQt5.QtGui.QPixmap('out.jpg').scaled(512, 384))
 
         self.bar_sta.showMessage('Run %s and save as out.jpg'%(self.file))
