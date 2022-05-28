@@ -37,5 +37,5 @@ if __name__=='__main__':
             o = clva(c.cuda(), x.cuda())
             
             o = (o[0].permute(1, 2, 0).data.cpu().numpy().clip(0.0, 1.0)*255.0).astype(np.uint8)
-            o = Image.fromarray(o).convert('RGB').save('./_output/%d.jpg'%(i), quality=100)
+            o = Image.fromarray(o).convert('RGB').save('./_output/%d.jpg'%(i), quality=100, subsampling=0)
             
