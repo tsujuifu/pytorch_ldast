@@ -32,7 +32,7 @@ python gui.py
 
 ## Citation
 ```
-@inproceedings{fu2021ldast, 
+@inproceedings{fu2022ldast, 
   author = {Tsu-Jui Fu and Xin Eric Wang and William Yang Wang}, 
   title = {Language-Driven Artistic Style Transfer}, 
   booktitle = {European Conference on Computer Vision (ECCV)}, 
