@@ -6,7 +6,8 @@ A **PyTorch** implementation of [LDAST](https://tsujuifu.github.io/pubs/arxiv_ld
 ## Overview
 LDAST is an implementation of <br>
 "[Language-Driven Artistic Style Transfer](https://tsujuifu.github.io/pubs/arxiv_ldast.pdf)" <br>
-[Tsu-Jui Fu](https://tsujuifu.github.io), [Xin Eric Wang](https://eric-xw.github.io/), and [William Yang Wang](https://sites.cs.ucsb.edu/~william)
+[Tsu-Jui Fu](https://tsujuifu.github.io), [Xin Eric Wang](https://eric-xw.github.io/), and [William Yang Wang](https://sites.cs.ucsb.edu/~william) <br>
+in European Conference on Computer Vision (<b>ECCV</b>) 2022 <br>
 
 <img src='_imgs/clva.png' width='60%' />
 
@@ -33,7 +34,7 @@ python inference.py
 @inproceedings{fu2021ldast, 
   author = {Tsu-Jui Fu and Xin Eric Wang and William Yang Wang}, 
   title = {Language-Driven Artistic Style Transfer}, 
-  booktitle = {arXiv:2106.00178}, 
-  year = {2021} 
+  booktitle = {European Conference on Computer Vision (ECCV)}, 
+  year = {2022} 
 }
 ```
