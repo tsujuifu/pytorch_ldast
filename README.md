@@ -28,7 +28,6 @@ Put [clva_dtd.pt](https://drive.google.com/drive/folders/1CPeG-V4f4J-o-s_1j0LjJl
 ```
 python inference.py
 ```
-
 ### GUI
 ```
 python gui.py
