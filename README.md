@@ -41,4 +41,4 @@ python gui.py
 ```
 
 ## Acknowledgement
-This code is based on [SANet](https://github.com/mumair5393/Style-Transfer-with-Style-Attentional-Networks)
+This code is based on [SANet](https://github.com/GlebSBrykin/SANET)
