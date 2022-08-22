@@ -1,5 +1,5 @@
 # [ECCV'22] Language-Driven Artistic Style Transfer
-A **PyTorch** implementation of [LDAST](https://tsujuifu.github.io/pubs/arxiv_ldast.pdf)
+A **PyTorch** implementation of [LDAST](https://tsujuifu.github.io/pubs/eccv22_ldast.pdf)
 
 <img src='_imgs/ldast.png' width='75%' />
 
