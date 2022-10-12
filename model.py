@@ -96,7 +96,7 @@ class CLVA(T.nn.Module):
                   T.nn.functional.interpolate(s5, scale_factor=F, mode='bicubic', align_corners=True)]
         
         sa4, sa5 = self.sa4(c4, s4), self.sa5(c5, s5)
-        sa = self.pad(sa4 + T.nn.functional.interpolate(sa5, size=[c4.shape[2], c4.shape[3]], mode='nearest'))
+        sa = self.pad(sa4 + T.nn.functional.interpolate(sa5, size=[c4.shape[2], c4.shape[3]], mode='nearest')) # bicubic
         sa = self.cnn(sa)
         
         out = self.dec(sa)
