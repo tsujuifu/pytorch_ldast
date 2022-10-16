@@ -25,8 +25,15 @@ This code is implemented under **Python 3.8**, [PyTorch 1.7](https://pypi.org/pr
 The [dataset](https://drive.google.com/drive/folders/1fznNVe7gChMBfFRK3Z9I_pkVC3vCcF19) includes content images and visual attribute instructions ([DTD](https://github.com/ChenyunWu/DescribingTextures)). <br>
 Please visit [WikiArt](https://www.wikiart.org/) and [here](https://docs.google.com/forms/d/e/1FAIpQLScmq5Ob4v2VNLHqPpo7CAh81v_uRW_Kkwqmd0NTcS6nu1vMYg/viewform) for emotional effect instructions ([ArtEmis](https://www.artemisdataset.org)).
 
+### Train
+Put [sanet.pt](https://drive.google.com/uc?id=1WE-9dbW9SSs2vUxG8rqIi5WqCX_SVogO) in [./\_ckpt](https://github.com/tsujuifu/pytorch_ldast/tree/main/_ckpt) and [dtd.pkl](https://drive.google.com/uc?id=1J1zZylbGwK72SJEnYyHH1o4QO9XCJoAt) in [./\_data](https://github.com/tsujuifu/pytorch_ldast/tree/main/_data).
+```
+python train_lva.py
+python train_ctr.py
+```
+
 ### Inference & GUI
-Put [clva_dtd.pt](https://drive.google.com/drive/folders/1CPeG-V4f4J-o-s_1j0LjJlncho0QsKtq) in [./\_ckpt](https://github.com/tsujuifu/pytorch_ldast/tree/main/_ckpt).
+Put [clva_dtd.pt](https://drive.google.com/uc?id=1Qon57oCyq4fThXeLutFtkVUIvgJvJrCg) in [./\_ckpt](https://github.com/tsujuifu/pytorch_ldast/tree/main/_ckpt).
 ```
 python inference.py
 python gui.py
