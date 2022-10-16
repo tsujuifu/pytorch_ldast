@@ -24,6 +24,7 @@ VGG = T.nn.Sequential(
     T.nn.ReflectionPad2d(1), T.nn.Conv2d(512, 512, 3), T.nn.ReLU(), 
     T.nn.ReflectionPad2d(1), T.nn.Conv2d(512, 512, 3), T.nn.ReLU()
 )
+for p in VGG.parameters(): p.requires_grad = False
 
 DECODER = T.nn.Sequential(
     T.nn.ReflectionPad2d(1), T.nn.Conv2d(512, 256, 3), T.nn.ReLU(),
@@ -84,8 +85,17 @@ class CLVA(T.nn.Module):
         self.pad, self.cnn = T.nn.ReflectionPad2d(1), T.nn.Conv2d(c, c, 3)
         
         self.dec = DECODER
+    
+    def fusion(self, c4, s4, c5, s5):
+        sa4, sa5 = self.sa4(c4, s4), self.sa5(c5, s5)
+        sa = self.pad(sa4 + T.nn.functional.interpolate(sa5, size=[c4.shape[2], c4.shape[3]], mode='nearest')) # bicubic
+        sa = self.cnn(sa)
         
-    def forward(self, con, ins):
+        out = self.dec(sa)
+        
+        return out
+    
+    def forward(self, con, ins): # forward_cx
         B = con.shape[0]
         
         c4, s4 = self.enc_c4(con), self.enc_s4(ins).view([B, -1, 8, 8])
@@ -95,11 +105,35 @@ class CLVA(T.nn.Module):
         s4, s5 = [T.nn.functional.interpolate(s4, scale_factor=F, mode='bicubic', align_corners=True), 
                   T.nn.functional.interpolate(s5, scale_factor=F, mode='bicubic', align_corners=True)]
         
-        sa4, sa5 = self.sa4(c4, s4), self.sa5(c5, s5)
-        sa = self.pad(sa4 + T.nn.functional.interpolate(sa5, size=[c4.shape[2], c4.shape[3]], mode='nearest')) # bicubic
-        sa = self.cnn(sa)
+        out = self.fusion(c4, s4, c5, s5)
         
-        out = self.dec(sa)
+        return out
+    
+    def forward_cs(self, con, sty):
+        B = con.shape[0]
+        
+        c4, s4 = self.enc_c4(con), self.enc_c4(sty)
+        c5, s5 = self.enc_c5(c4), self.enc_c5(s4)
+        
+        out = self.fusion(c4, s4, c5, s5)
+        
+        return out
+
+class Discriminator(T.nn.Module): 
+    def __init__(self):
+        super().__init__()
+        
+        self.enc = T.nn.Sequential(*list(VGG.children())[:31])
+        self.cnn = T.nn.Sequential(*[T.nn.ReflectionPad2d(1), T.nn.Conv2d(512, 512, 3), T.nn.ReLU(), 
+                                     T.nn.ReflectionPad2d(1), T.nn.Conv2d(512, 512, 3), T.nn.ReLU(), 
+                                     T.nn.AdaptiveAvgPool2d(1)])
+        self.fc = T.nn.Sequential(*[T.nn.Linear(1024, 1024), T.nn.ReLU(), 
+                                    T.nn.Linear(1024, 1), T.nn.Sigmoid()])
+        
+    def forward(self, patch, ins):
+        f = self.enc(patch)
+        f = self.cnn(f).squeeze()
+        out = self.fc(T.cat([f, ins], dim=1))
         
         return out
     
