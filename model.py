@@ -43,7 +43,7 @@ DECODER = T.nn.Sequential(
 )
 
 class SA(T.nn.Module):
-    def  norm(self, feat, eps=1e-5):
+    def norm(self, feat, eps=1e-5):
         B, C = feat.shape[:2]
         var = feat.view([B, C, -1]).var(dim=2) + eps
         std = var.sqrt().view([B, C, 1, 1])
