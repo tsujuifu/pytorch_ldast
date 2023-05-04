@@ -1,7 +1,7 @@
 # [ECCV'22] Language-Driven Artistic Style Transfer
 A **PyTorch** implementation of [LDAST](https://tsujuifu.github.io/pubs/eccv22_ldast.pdf)
 
-[Paper](https://tsujuifu.github.io/pubs/eccv22_ldast.pdf) | [Slide](https://tsujuifu.github.io/slides/eccv22_ldast.pdf) | [Video](https://youtu.be/76wKrkJjsgg)
+[Paper](https://tsujuifu.github.io/pubs/eccv22_ldast.pdf) | [Project](https://ldast.github.io) | [Slide](https://tsujuifu.github.io/slides/eccv22_ldast.pdf) | [Video](https://youtu.be/76wKrkJjsgg)
 
 <img src='_imgs/ldast.png' width='75%' />
 
