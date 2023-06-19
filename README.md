@@ -43,7 +43,7 @@ python gui.py
 ```
 @inproceedings{fu2022ldast, 
   author = {Tsu-Jui Fu and Xin Eric Wang and William Yang Wang}, 
-  title = {Language-Driven Artistic Style Transfer}, 
+  title = {{Language-Driven Artistic Style Transfer}}, 
   booktitle = {European Conference on Computer Vision (ECCV)}, 
   year = {2022} 
 }
